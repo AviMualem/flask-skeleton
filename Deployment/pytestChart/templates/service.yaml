@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "pytestChart.fullname" . }}
+  labels:
+    app: {{ template "pytestChart.name" . }}
+    chart: {{ template "pytestChart.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.targetPort }}
+      protocol: TCP
+      name: http
+  selector:
+    app: {{ template "pytestChart.name" . }}
+    release: {{ .Release.Name }}
