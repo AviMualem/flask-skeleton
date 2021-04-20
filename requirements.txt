@@ -42,7 +42,7 @@ Paste==2.0.3
 permission==0.4.1
 pluggy==0.6.0
 portend==2.2
-py==1.5.3
+py==1.10.0
 pycparser==2.18
 pydevd==1.2.0
 pydocumentdb==2.3.1
